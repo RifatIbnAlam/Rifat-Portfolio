@@ -921,7 +921,7 @@ h3 {
 
 .stack {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-top: 16px;
   padding: 26px;
@@ -969,6 +969,34 @@ h3 {
   font: 500 0.78rem var(--mono);
   background: var(--accent-soft);
   color: var(--accent);
+}
+
+.certs {
+  margin-top: 16px;
+  padding: 26px 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.certs ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 32px;
+  margin-top: 14px;
+}
+
+.certs li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  color: var(--ink-2);
+}
+
+.certs li span {
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 .honors {
@@ -1112,7 +1140,8 @@ h3 {
   .pipeline {
     max-width: 560px;
   }
-  .skills-grid {
+  .skills-grid,
+  .stack {
     grid-template-columns: repeat(2, 1fr);
   }
   .case {
@@ -1166,7 +1195,8 @@ h3 {
     gap: 12px;
   }
   .edu-grid,
-  .stack {
+  .stack,
+  .certs ul {
     grid-template-columns: 1fr;
   }
 }

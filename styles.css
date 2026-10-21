@@ -1248,3 +1248,11 @@ h3 {
     flex-direction: column;
   }
 }
+
+/* Links under a case study's stats (live app, code) */
+.case-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}

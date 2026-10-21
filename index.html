@@ -308,6 +308,38 @@
               </div>
             </div>
           </article>
+
+          <article class="case reveal">
+            <div class="case-side">
+              <p class="case-org">Personal project · Formula 1 analytics</p>
+              <h3>Undercut: race-strategy decision support built on live F1 timing data</h3>
+              <ul class="tags">
+                <li>React</li><li>Python</li><li>Forecasting</li><li>Monte Carlo</li><li>KPI scorecard</li><li>CI/CD</li>
+              </ul>
+              <div class="case-stats">
+                <div><span class="big">~30K</span><span>strategies searched per scenario</span></div>
+                <div><span class="big">2,000</span><span>simulated races per plan</span></div>
+              </div>
+              <div class="case-links">
+                <a class="btn btn-accent btn-sm" href="https://rifatibnalam.github.io/f1-strategy-hub/" target="_blank" rel="noopener">Live app</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/RifatIbnAlam/f1-strategy-hub" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+            <div class="case-body">
+              <div class="star">
+                <p class="star-label">Problem</p>
+                <p>F1 race strategy is a decision under uncertainty: when to stop and on which tyres, with incomplete information and a random safety car that can make or break the call. Public tools show the data but don't turn it into a recommendation.</p>
+              </div>
+              <div class="star">
+                <p class="star-label">What I did</p>
+                <p>Built a lap-by-lap strategy model and fitted it to real races with a regression, then backtested it on races it hadn't seen against a simple baseline. Added a Monte Carlo simulation that prices in safety-car risk, an optimiser that searches every legal plan, and a one-page strategy brief with a recommendation, contingency plan and sensitivity analysis. Defined an operations scorecard for every team: pit-crew speed and consistency normalised by circuit, reliability, and the time lost to inconsistent execution.</p>
+              </div>
+              <div class="star star-result">
+                <p class="star-label">Result</p>
+                <p>A live decision-support tool with <strong>executive-style briefs</strong>, <strong>KPI scorecards</strong> and <strong>risk-adjusted recommendations</strong>, kept reliable by automated tests and an offline data snapshot. The same skills as forecasting, scenario planning and operational reporting, applied to a sport I follow closely.</p>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 

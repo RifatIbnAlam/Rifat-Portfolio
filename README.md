@@ -1,42 +1,44 @@
 # Rifat-Portfolio
 
-Personal portfolio website for Rifat Ibn Alam, showcasing projects, skills, and professional experience.
+Personal portfolio website for Rifat Ibn Alam, Business Operations Analyst. It showcases case studies, experience, skills and education.
 
 ## Overview
 
-This repository contains the source code for my personal portfolio website, built with HTML, CSS, and JavaScript. The site is deployed via GitHub Pages and serves as an interactive resume and project showcase.
+The site is a single static page built with HTML, CSS and JavaScript, with no build step or dependencies. It is deployed with GitHub Pages and works as an interactive résumé and case-study showcase.
 
-## Live Demo
+## Live site
 
-Visit the live site: [https://rifatibnalam.github.io/Rifat-Portfolio/](https://rifatibnalam.github.io/Rifat-Portfolio/)
+[https://rifatibnalam.github.io/Rifat-Portfolio/](https://rifatibnalam.github.io/Rifat-Portfolio/)
 
-## Repository Contents
+## Features
 
-- `index.html` — Main portfolio page
-- - `styles.css` — Stylesheet for the portfolio
-  - - `script.js` — JavaScript for interactive elements
-    - - `Rifat Ibn Alam-resume.pdf` — Downloadable resume
-     
-      - ## Technologies Used
-     
-      - - HTML5
-        - - CSS3
-          - - JavaScript
-           
-            - ## Getting Started
-           
-            - To run locally:
-           
-            - 1. Clone the repository:
-              2.    ```bash
-                       git clone https://github.com/RifatIbnAlam/Rifat-Portfolio.git
-                       ```
-                    2. Open `index.html` in your browser.
-                
-                    3. ## Author
-                
-                    4. **Rifat Ibn Alam** — Data Analyst & Developer at Utah State University
-                
-                    5. - [GitHub](https://github.com/RifatIbnAlam)
-                       - - [LinkedIn](https://linkedin.com/in/rifat-ibn-alam)
-                         - - [Portfolio](https://rifatibnalam.github.io/Rifat-Portfolio/)
+- Case studies written as problem → what I did → result, each with measured outcomes
+- "How I work" playbook that links each step to evidence from real projects
+- Interactive automation savings calculator that pre-fills an email with the visitor's numbers
+- Light and dark themes that follow the system setting, with a manual toggle
+- Accessibility: skip link, keyboard focus styles, reduced-motion support and semantic landmarks
+- Print stylesheet, so the page prints as a clean one-pager
+- Structured data (schema.org `Person`) and social meta tags for search and link previews
+
+## Repository contents
+
+- `index.html`: main portfolio page
+- `styles.css`: stylesheet
+- `script.js`: interactive elements (theme, animations, calculator, menu)
+- `Rifat Ibn Alam-resume.pdf`: downloadable résumé
+
+## Running locally
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/RifatIbnAlam/Rifat-Portfolio.git
+   ```
+2. Open `index.html` in your browser.
+
+## Author
+
+**Rifat Ibn Alam**, Business Operations Analyst
+
+- [GitHub](https://github.com/RifatIbnAlam)
+- [LinkedIn](https://linkedin.com/in/rifat-ibn-alam)
+- [Portfolio](https://rifatibnalam.github.io/Rifat-Portfolio/)

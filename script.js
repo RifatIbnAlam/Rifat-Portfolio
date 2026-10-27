@@ -121,3 +121,41 @@ document.getElementById("copy-email")?.addEventListener("click", async (e) => {
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Savings calculator
+const calc = document.getElementById("calc");
+if (calc) {
+  const WEEKS = 48;
+  const FTE_HOURS = 1920;
+  const fields = ["people", "hours", "rate", "auto"];
+  const val = (k) => Number(document.getElementById(`c-${k}`).value);
+  const fmt = (n) => Math.round(n).toLocaleString("en-US");
+  const out = {
+    people: (v) => v,
+    hours: (v) => v,
+    rate: (v) => `$${v}`,
+    auto: (v) => `${v}%`,
+  };
+  const update = () => {
+    fields.forEach((k) => {
+      document.getElementById(`c-${k}-out`).textContent = out[k](val(k));
+    });
+    const hours = val("people") * val("hours") * WEEKS * (val("auto") / 100);
+    const dollars = hours * val("rate");
+    const fte = hours / FTE_HOURS;
+    document.getElementById("c-dollars").textContent = `$${fmt(dollars)}`;
+    document.getElementById("c-hours-saved").textContent = fmt(hours);
+    document.getElementById("c-fte").textContent = fte.toFixed(1);
+    const subject = "Automating a manual process";
+    const body =
+      `Hi Rifat,\n\nI used the calculator on your portfolio. Our process: ` +
+      `${val("people")} people spend ${val("hours")} hours/week each, ` +
+      `about ${val("auto")}% of it automatable. Your estimate: $${fmt(dollars)} ` +
+      `and ${fmt(hours)} hours a year.\n\nCould we talk?\n`;
+    document.getElementById("c-mail").href =
+      `mailto:rifatibnalam50@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+  calc.addEventListener("input", update);
+  calc.addEventListener("submit", (e) => e.preventDefault());
+  update();
+}

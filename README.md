@@ -13,11 +13,13 @@ The site is a single static page built with HTML, CSS and JavaScript, with no bu
 ## Features
 
 - Case studies written as problem → what I did → result, each with measured outcomes
+- Projects & research section featuring public repos: peer-review research, automation tools built for real teams, and analytics work
 - "How I work" playbook that links each step to evidence from real projects
 - Interactive automation savings calculator that pre-fills an email with the visitor's numbers
 - Light and dark themes that follow the system setting, with a manual toggle
 - Accessibility: skip link, keyboard focus styles, reduced-motion support and semantic landmarks
 - Print stylesheet, so the page prints as a clean one-pager
+- Versioned CSS/JS links, so returning visitors never get a stale stylesheet after an update
 - Structured data (schema.org `Person`) and social meta tags for search and link previews
 
 ## Repository contents

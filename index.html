@@ -51,7 +51,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2026-10-27" />
     <script>
       try {
         const saved = localStorage.getItem("theme");
@@ -71,7 +71,7 @@
         </a>
         <nav class="menu" id="menu" aria-label="Primary">
           <a href="#work">Work</a>
-          <a href="#approach">Approach</a>
+          <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#education">Education</a>
@@ -370,11 +370,120 @@
         </div>
       </section>
 
-      <!-- APPROACH -->
-      <section id="approach" class="section section-alt">
+      <!-- PROJECTS -->
+      <section id="projects" class="section section-alt">
         <div class="container">
           <header class="section-head reveal">
-            <p class="kicker"><span>02</span> How I work</p>
+            <p class="kicker"><span>02</span> Projects &amp; research</p>
+            <h2>More than the day job: <em>tools, research and analysis.</em></h2>
+            <p class="section-lead">Everything here is public on GitHub, so you can read the code behind it.</p>
+          </header>
+
+          <div class="proj-group">
+            <p class="mono label proj-group-label">Research</p>
+            <div class="proj-grid proj-grid-2">
+              <article class="proj proj-wide reveal">
+                <p class="proj-kind mono">Research · under peer review, Journal of Forecasting</p>
+                <h4>Deep Forecasting: econometric vs. ML vs. deep learning for daily stock prices</h4>
+                <p>Benchmarked ten models (ARIMA, SARIMA, random forest, XGBoost, LSTM and more) on MSFT, SPY and ETSY over 11 years with one walk-forward protocol. Tested whether the differences are real with Diebold–Mariano tests and a Model Confidence Set I implemented from scratch. Finding: simple models matched deep learning, and XGBoost was the only model rejected on every ticker.</p>
+                <p class="proj-stat"><span class="big">10 × 3</span><span>models × tickers, same test dates</span></p>
+                <ul class="tags"><li>Python</li><li>Time series</li><li>Statistical testing</li><li>LSTM</li></ul>
+                <a class="proj-link" href="https://github.com/RifatIbnAlam/DeepForecasting-Stock-Prediction-Data" target="_blank" rel="noopener">View code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </article>
+              <article class="proj proj-wide reveal">
+                <p class="proj-kind mono">Research · AI cost-benefit</p>
+                <h4>Do frontier LLMs beat specialized models? A reproducible benchmark</h4>
+                <p>Compared Claude Haiku 4.5 and GPT-4o-mini against four purpose-built knowledge-tracing models on 208,644 real student interactions. The specialized LSTM won by 0.052 AUC (p &lt; 0.001), and I priced the trade-off: $126 to $1,580 a year in API spend at deployment scale versus $0 to run the specialized models locally.</p>
+                <p class="proj-stat"><span class="big">$1.28</span><span>total API cost of the full benchmark</span></p>
+                <ul class="tags"><li>Python</li><li>LLM APIs</li><li>PyTorch</li><li>Bootstrap CIs</li><li>Cost analysis</li></ul>
+                <a class="proj-link" href="https://github.com/RifatIbnAlam/llm-kt-benchmark" target="_blank" rel="noopener">View code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </article>
+            </div>
+          </div>
+
+          <div class="proj-group">
+            <p class="mono label proj-group-label">Automation tools I built for real teams</p>
+            <div class="proj-grid">
+              <article class="proj reveal">
+                <p class="proj-kind mono">Ops tool · built for USU staff</p>
+                <h4>Canvas BulkFlow</h4>
+                <p>End-to-end pipeline for inaccessible scanned PDFs: pull them from Canvas using the Ally report, OCR them through an ABBYY FineReader hot folder, and replace the originals in place. Wrapped in a one-click local web UI with live progress, and packaged as a Windows .exe so non-technical staff can run it.</p>
+                <ul class="tags"><li>Python</li><li>Canvas API</li><li>Flask</li><li>PyInstaller</li></ul>
+                <a class="proj-link" href="https://github.com/RifatIbnAlam/Canvas-BulkFlow-UI" target="_blank" rel="noopener">View code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </article>
+              <article class="proj reveal">
+                <p class="proj-kind mono">Ops tool · document workflow</p>
+                <h4>Canvas Facilitators Workflow</h4>
+                <p>Drag in an Ally CSV export and the app downloads the flagged Word, PowerPoint and PDF files, files them into course folders in Canvas, collects shareable links and exports a Monday.com-ready CSV for staff handoff. Tokens stay in environment variables, and local copies are cleaned up after upload.</p>
+                <ul class="tags"><li>Python</li><li>Canvas API</li><li>Web UI</li><li>Monday.com</li></ul>
+                <a class="proj-link" href="https://github.com/RifatIbnAlam/canvas-facilitators-workflow" target="_blank" rel="noopener">View code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </article>
+              <article class="proj reveal">
+                <p class="proj-kind mono">Ops tool · safe bulk changes</p>
+                <h4>Monday.com subitem cleanup</h4>
+                <p>Bulk-deletes subitems from a Monday.com board without touching parent items. It previews by default, requires a typed confirmation phrase, works in batches with retries on rate limits, and never stores the API token. Built for safety first, because the deletion can’t be undone.</p>
+                <ul class="tags"><li>Python</li><li>GraphQL API</li><li>Change control</li></ul>
+                <a class="proj-link" href="https://github.com/RifatIbnAlam/monday-subitem-cleanup" target="_blank" rel="noopener">View code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </article>
+              <article class="proj reveal">
+                <p class="proj-kind mono">Ops tool · Chrome extension</p>
+                <h4>Canvasclump</h4>
+                <p>A Chrome extension that grabs every file link on a Canvas page with one hotkey and keeps a history of copied links, which replaces a tedious copy-paste step in the remediation workflow.</p>
+                <ul class="tags"><li>React</li><li>TypeScript</li><li>Chrome Extensions</li><li>Vite</li></ul>
+                <a class="proj-link" href="https://github.com/RifatIbnAlam/canvas-file-link-scraper" target="_blank" rel="noopener">View code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </article>
+            </div>
+          </div>
+
+          <div class="proj-group">
+            <p class="mono label proj-group-label">Analytics &amp; applications</p>
+            <div class="proj-grid">
+              <article class="proj reveal">
+                <p class="proj-kind mono">Analytics · executive summary</p>
+                <h4>HR attrition: what drives employees to leave</h4>
+                <p>Analyzed 1,470 employee records in Tableau and wrote a one-page summary with recommendations for a leadership audience. Found a 16.1% overall attrition rate, rising to 29.1% for 25–34-year-olds, and showed that pay tracks satisfaction in HR but not in R&amp;D or Sales.</p>
+                <p class="proj-stat"><span class="big">29.1%</span><span>attrition in the 25–34 age group</span></p>
+                <ul class="tags"><li>Tableau</li><li>Data storytelling</li><li>People analytics</li></ul>
+                <a class="proj-link" href="https://github.com/RifatIbnAlam/HR-Attrition-Data" target="_blank" rel="noopener">View code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </article>
+              <article class="proj reveal">
+                <p class="proj-kind mono">AI app · FastAPI</p>
+                <h4>ResumeForge: truthful ATS résumé optimizer</h4>
+                <p>Parses a PDF or Word résumé, scores keyword coverage against a job description and uses an LLM to rewrite for applicant tracking systems without inventing experience. Exports to PDF and DOCX, and falls back to guidance-only mode when no API key is set.</p>
+                <ul class="tags"><li>FastAPI</li><li>OpenAI API</li><li>Python</li><li>PDF/DOCX export</li></ul>
+                <a class="proj-link" href="https://github.com/RifatIbnAlam/resumeforge-atlas" target="_blank" rel="noopener">View code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </article>
+              <article class="proj reveal">
+                <p class="proj-kind mono">Full-stack · course project</p>
+                <h4>Main Street Markets</h4>
+                <p>A marketplace connecting local shops and shoppers, with a Django REST API, a React web app and a React Native mobile app. Includes JWT auth, Stripe payments, Celery background jobs and S3 media storage.</p>
+                <ul class="tags"><li>Django</li><li>React</li><li>React Native</li><li>Stripe</li><li>AWS S3</li></ul>
+                <a class="proj-link" href="https://github.com/RifatIbnAlam/Data5570-Main-Street-Markets" target="_blank" rel="noopener">View code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </article>
+              <article class="proj reveal">
+                <p class="proj-kind mono">Finance research · event studies</p>
+                <h4>Crypto market event studies</h4>
+                <p>Measured abnormal and cumulative abnormal returns for 20+ cryptocurrencies around Binance regulatory events and the 2016, 2020 and 2024 U.S. presidential elections, benchmarked against the MSCI index.</p>
+                <ul class="tags"><li>Python</li><li>pandas</li><li>Event study</li><li>Econometrics</li></ul>
+                <a class="proj-link" href="https://github.com/RifatIbnAlam/Binance-Event-Study-Master-Dataset-" target="_blank" rel="noopener">View code <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </article>
+            </div>
+          </div>
+
+          <p class="proj-more reveal">
+            <a class="btn btn-ghost" href="https://github.com/RifatIbnAlam?tab=repositories" target="_blank" rel="noopener">
+              All repositories on GitHub
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <!-- APPROACH -->
+      <section id="approach" class="section">
+        <div class="container">
+          <header class="section-head reveal">
+            <p class="kicker"><span>03</span> How I work</p>
             <h2>A repeatable playbook, <em>not one-off heroics.</em></h2>
             <p class="section-lead">The same five steps sit behind every result above. Each one comes with proof from real projects.</p>
           </header>
@@ -418,7 +527,7 @@
       <section id="experience" class="section section-alt">
         <div class="container">
           <header class="section-head reveal">
-            <p class="kicker"><span>03</span> Experience</p>
+            <p class="kicker"><span>04</span> Experience</p>
             <h2>4+ years of delivery in <em>regulated, high-stakes</em> environments.</h2>
           </header>
 
@@ -491,7 +600,7 @@
       <section id="skills" class="section">
         <div class="container">
           <header class="section-head reveal">
-            <p class="kicker"><span>04</span> Skills &amp; roles</p>
+            <p class="kicker"><span>05</span> Skills &amp; roles</p>
             <h2>Where I add value <em>from day one.</em></h2>
           </header>
 
@@ -551,7 +660,7 @@
       <section id="education" class="section section-alt">
         <div class="container">
           <header class="section-head reveal">
-            <p class="kicker"><span>05</span> Education, certifications &amp; honors</p>
+            <p class="kicker"><span>06</span> Education, certifications &amp; honors</p>
             <h2>Three degrees. <em>Summa cum laude</em>, graduate and undergraduate.</h2>
           </header>
 
@@ -598,7 +707,7 @@
       <section id="calculator" class="section">
         <div class="container">
           <header class="section-head reveal">
-            <p class="kicker"><span>06</span> Try it</p>
+            <p class="kicker"><span>07</span> Try it</p>
             <h2>What is your manual process <em>costing you?</em></h2>
             <p class="section-lead">Move the sliders to match a process on your team. This is the same back-of-envelope estimate I start every automation project with.</p>
           </header>
@@ -649,7 +758,7 @@
       <section id="contact" class="section">
         <div class="container">
           <div class="cta reveal">
-            <p class="kicker kicker-light"><span>07</span> Contact</p>
+            <p class="kicker kicker-light"><span>08</span> Contact</p>
             <h2>Have a process that's still running on spreadsheets and email? <em>Let's talk.</em></h2>
             <p>I'm looking for Business Operations Analyst, program management and business systems roles. I'm open to hybrid work and relocation.</p>
             <div class="cta-actions">
@@ -671,6 +780,6 @@
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="script.js"></script>
+    <script src="script.js?v=2026-10-27"></script>
   </body>
 </html>

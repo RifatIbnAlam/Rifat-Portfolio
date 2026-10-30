@@ -49,17 +49,11 @@ document.querySelectorAll(".count").forEach((el) => {
   countObserver.observe(el);
 });
 
-// Pipeline steps light up in sequence
+// Pipeline steps light up once, in sequence
 const steps = [...document.querySelectorAll(".step")];
 if (steps.length) {
-  let active = 0;
-  const light = () => {
-    steps.forEach((s, i) => s.classList.toggle("on", i <= active));
-    active = (active + 1) % (steps.length + 1);
-  };
-  light();
-  if (!reduceMotion) setInterval(light, 1100);
-  else steps.forEach((s) => s.classList.add("on"));
+  if (reduceMotion) steps.forEach((s) => s.classList.add("on"));
+  else steps.forEach((s, i) => setTimeout(() => s.classList.add("on"), 600 + i * 450));
 }
 
 // Theme toggle

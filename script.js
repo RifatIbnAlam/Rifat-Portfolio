@@ -78,16 +78,13 @@ const setMenu = (open) => {
 menuToggle?.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
 menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
 
-// Header border, scroll progress, active nav link
+// Header border, active nav link
 const header = document.querySelector(".site-header");
-const progress = document.querySelector(".scroll-progress");
 const navLinks = [...document.querySelectorAll(".menu a")];
 const sections = navLinks.map((a) => document.querySelector(a.getAttribute("href")));
 const onScroll = () => {
   const y = window.scrollY;
   header.classList.toggle("scrolled", y > 8);
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
   let current = -1;
   sections.forEach((s, i) => {
     if (s && s.getBoundingClientRect().top < window.innerHeight * 0.4) current = i;
